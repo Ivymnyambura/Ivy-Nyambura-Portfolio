@@ -1,121 +1,364 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useEffect, useState } from 'react'
+import jiraniMart from './assets/jirani-mart.png'
+
+const sections = ['home', 'about', 'experience', 'contact']
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeSection, setActiveSection] = useState(0)
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = []
+
+    sections.forEach((section, index) => {
+      const element = document.getElementById(section)
+
+      if (!element) return
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSection(index)
+          }
+        },
+        {
+          threshold: 0.45,
+        }
+      )
+
+      observer.observe(element)
+      observers.push(observer)
+    })
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect())
+    }
+  }, [])
+
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: 'smooth',
+    })
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <main className="site">
+
+      {/* NAVIGATION */}
+
+      <nav className="navbar">
+        <button
+          className="logo"
+          onClick={() => scrollToSection('home')}
+          aria-label="Go to home"
+        >
+          IN<span>.</span>
+        </button>
+
+        <div className="nav-links">
+  <button onClick={() => scrollToSection('about')}>
+    ABOUT
+  </button>
+
+  <button onClick={() => scrollToSection('experience')}>
+    WORK
+  </button>
+
+  <button onClick={() => scrollToSection('experience')}>
+    EXPERIENCE
+  </button>
+
+  <button onClick={() => scrollToSection('contact')}>
+    CONTACT
+  </button>
+</div>
+
+        <div className="availability">
+          <span>NAIROBI, KE</span>
+          <span className="status-dot"></span>
         </div>
-        <div>
-          <h1>Get started</h1>
+      </nav>
+
+
+      {/* 01 — HERO */}
+
+      <section id="home" className="hero page-section">
+
+        <div className="hero-top">
+
+          <div className="role">
+            <span>SOFTWARE DEVELOPER</span>
+            <span>SOFTWARE DEVELOPER & UI / UX DESIGNER</span>
+          </div>
+
+          <div className="availability-text">
+            <span>NAIROBI, KE</span>
+            <span>NAIROBI,KE</span>
+          </div>
+
+        </div>
+
+
+        <div className="hero-title">
+          <h1>
+  BUILDING
+  <br />
+  <span>DIGITAL</span>
+  <br />
+  EXPERIENCES
+  <br />
+  THAT
+  <br />
+  <span>FEEL AS GOOD</span>
+</h1>
+        </div>
+
+
+        <div className="hero-bottom">
+
+  <div className="hero-meta">
+    <span>SOFTWARE DEVELOPER · UI / UX DESIGNER</span>
+    <span>2026</span>
+  </div>
+
+  <div className="hero-scroll">
+    <span className="scroll-line"></span>
+    <span>SCROLL</span>
+  </div>
+
+  <div className="section-counter">
+    [ 0{activeSection + 1} / 04 ]
+  </div>
+
+</div>
+
+      </section>
+
+
+      {/* 02 — ABOUT */}
+
+      <section id="about" className="about page-section">
+
+        <div className="section-header">
+          <div className="section-number">
+            [ 02 ]
+          </div>
+
+          <div className="section-title">
+            ABOUT
+          </div>
+
+          <div className="section-line"></div>
+        </div>
+
+
+        <div className="about-content">
+
+          <div className="about-description">
+            <p>
+              I'm a software developer and UI / UX designer working
+              at the intersection of engineering and design. My focus
+              is building useful, visually thoughtful digital products
+              interfaces that are as deliberate as the code beneath them.
+            </p>
+          </div>
+
+
+          <div className="toolbox">
+
+            <div className="toolbox-heading">
+              <span>TOOLBOX</span>
+              <span>08</span>
+            </div>
+
+            <div className="toolbox-list">
+
+              <div className="tool">
+                <span className="tool-dot">•</span>
+                <span>TYPESCRIPT</span>
+                <span>01</span>
+              </div>
+
+              <div className="tool">
+                <span className="tool-dot">•</span>
+                <span>JAVASCRIPT</span>
+                <span>02</span>
+              </div>
+
+              <div className="tool">
+                <span className="tool-dot">•</span>
+                <span>REACT</span>
+                <span>03</span>
+              </div>
+
+              <div className="tool">
+                <span className="tool-dot">•</span>
+                <span>HTML / CSS</span>
+                <span>04</span>
+              </div>
+
+              <div className="tool">
+                <span className="tool-dot">•</span>
+                <span>UI / UX</span>
+                <span>05</span>
+              </div>
+
+              <div className="tool">
+                <span className="tool-dot">•</span>
+                <span>FIGMA</span>
+                <span>06</span>
+              </div>
+
+              <div className="tool">
+                <span className="tool-dot">•</span>
+                <span>GIT / GITHUB</span>
+                <span>07</span>
+              </div>
+
+              <div className="tool">
+                <span className="tool-dot">•</span>
+                <span>PYTHON</span>
+                <span>08</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+  
+      {/* 03 — SELECTED WORK */}
+
+<section id="work" className="selected-work page-section">
+
+  <div className="section-header work-header">
+    <div className="section-number">
+      [ 03 ]
+    </div>
+
+    <div className="section-title">
+      SELECTED WORK
+    </div>
+
+    <div className="section-line"></div>
+
+    <div className="project-count">
+      3 PROJECTS
+    </div>
+  </div>
+
+
+  <article className="featured-project">
+
+    <div className="project-top">
+      <span className="project-index">
+        01
+      </span>
+
+      <div className="project-year">
+        2026
+      </div>
+    </div>
+
+
+    <div className="project-name">
+      Jirani-Mart
+    </div>
+
+
+    <div className="project-details">
+
+      <div className="project-image-wrapper">
+        <img
+          src={jiraniMart}
+          alt="Jirani-Mart interface design"
+          className="project-image"
+        />
+      </div>
+
+
+      <div className="project-info">
+
+        <div className="info-block">
+          <span className="info-label">
+            ROLE
+          </span>
+
           <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
+            UI / UX Design · Frontend Development
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
+
+
+        <div className="info-block">
+          <span className="info-label">
+            TECHNOLOGY
+          </span>
+
+          <p>
+            React · TypeScript · Vite
+          </p>
+        </div>
+
+
+        <div className="info-block">
+          <span className="info-label">
+            FOCUS
+          </span>
+
+          <p>
+            E-commerce · User Experience
+          </p>
+        </div>
+
+
+        <button className="project-link">
+          VIEW PROJECT
+          <span>↗</span>
         </button>
+
+      </div>
+
+    </div>
+
+  </article>
+
+</section>
+
+      {/* 04 — CONTACT */}
+
+      <section id="contact" className="contact page-section">
+
+        <div className="section-header">
+          <div className="section-number">
+            [ 04 ]
+          </div>
+
+          <div className="section-title">
+            CONTACT
+          </div>
+
+          <div className="section-line"></div>
+        </div>
+
+        <div className="placeholder-section">
+          <p>LET'S BUILD SOMETHING.</p>
+        </div>
+
       </section>
 
-      <div className="ticks"></div>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      {/* FOOTER */}
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      <footer className="site-footer">
+        <span>IN.</span>
+        <span>© 2026</span>
+      </footer>
+
+    </main>
   )
 }
 
