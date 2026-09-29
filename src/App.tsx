@@ -59,7 +59,7 @@ function App() {
     ABOUT
   </button>
 
-  <button onClick={() => scrollToSection('experience')}>
+  <button onClick={() => scrollToSection('work')}>
     WORK
   </button>
 
@@ -72,10 +72,7 @@ function App() {
   </button>
 </div>
 
-        <div className="availability">
-          <span>NAIROBI, KE</span>
-          <span className="status-dot"></span>
-        </div>
+        
       </nav>
 
 
@@ -87,7 +84,8 @@ function App() {
 
           <div className="role">
             <span>SOFTWARE DEVELOPER</span>
-            <span>SOFTWARE DEVELOPER & UI / UX DESIGNER</span>
+            <span><span>IVY M. NYAMBURA</span><br/>
+            SOFTWARE DEVELOPER & UI / UX DESIGNER</span>
           </div>
 
           <div className="availability-text">
@@ -116,17 +114,14 @@ function App() {
         <div className="hero-bottom">
 
   <div className="hero-meta">
-    <span>SOFTWARE DEVELOPER · UI / UX DESIGNER</span>
-    <span>2026</span>
+    <span>IVY MONICA NYAMBURA<br/>
+      SOFTWARE DEVELOPER · UI / UX DESIGNER</span>
+    <span></span>
   </div>
 
-  <div className="hero-scroll">
-    <span className="scroll-line"></span>
-    <span>SCROLL</span>
-  </div>
-
+  
   <div className="section-counter">
-    [ 0{activeSection + 1} / 04 ]
+    
   </div>
 
 </div>
@@ -154,6 +149,8 @@ function App() {
         <div className="about-content">
 
           <div className="about-description">
+            <h2>IVY<span> M.</span> NYAMBURA</h2><br/>
+            
             <p>
               I'm a software developer and UI / UX designer working
               at the intersection of engineering and design. My focus
@@ -259,13 +256,13 @@ function App() {
       </span>
 
       <div className="project-year">
-        2026
+        
       </div>
     </div>
 
 
     <div className="project-name">
-      Jirani-Mart
+      <h1>Jirani-Mart</h1>
     </div>
 
 
@@ -284,7 +281,7 @@ function App() {
 
         <div className="info-block">
           <span className="info-label">
-            ROLE
+            <span>ROLE</span>
           </span>
 
           <p>
@@ -295,7 +292,7 @@ function App() {
 
         <div className="info-block">
           <span className="info-label">
-            TECHNOLOGY
+            <span>TECHNOLOGY</span>
           </span>
 
           <p>
@@ -306,7 +303,7 @@ function App() {
 
         <div className="info-block">
           <span className="info-label">
-            FOCUS
+            <span>FOCUS</span>
           </span>
 
           <p>
