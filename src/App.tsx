@@ -1,7 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect,useState} from 'react'
 import jiraniMart from './assets/jirani-mart.png'
+import TheAbode from './assets/The-Abode.png'
+import facetally from './assets/facetally.png'
+import './App.css'
 
-const sections = ['home', 'about', 'experience', 'contact']
+const sections = ['home', 'about', 'work', 'contact']
 
 function App() {
   const [activeSection, setActiveSection] = useState(0)
@@ -120,9 +123,9 @@ function App() {
   </div>
 
   
-  <div className="section-counter">
-    
-  </div>
+<div className="section-counter">
+  [ 0{activeSection + 1} / 04 ]
+</div>
 
 </div>
 
@@ -229,6 +232,7 @@ function App() {
   
       {/* 03 — SELECTED WORK */}
 
+{/* 03 — SELECTED WORK */}
 <section id="work" className="selected-work page-section">
 
   <div className="section-header work-header">
@@ -247,7 +251,6 @@ function App() {
     </div>
   </div>
 
-
   <article className="featured-project">
 
     <div className="project-top">
@@ -256,15 +259,13 @@ function App() {
       </span>
 
       <div className="project-year">
-        
+        2026
       </div>
     </div>
-
 
     <div className="project-name">
       <h1>Jirani-Mart</h1>
     </div>
-
 
     <div className="project-details">
 
@@ -276,12 +277,11 @@ function App() {
         />
       </div>
 
-
       <div className="project-info">
 
         <div className="info-block">
           <span className="info-label">
-            <span>ROLE</span>
+            ROLE
           </span>
 
           <p>
@@ -289,10 +289,9 @@ function App() {
           </p>
         </div>
 
-
         <div className="info-block">
           <span className="info-label">
-            <span>TECHNOLOGY</span>
+            TECHNOLOGY
           </span>
 
           <p>
@@ -300,10 +299,9 @@ function App() {
           </p>
         </div>
 
-
         <div className="info-block">
           <span className="info-label">
-            <span>FOCUS</span>
+            FOCUS
           </span>
 
           <p>
@@ -311,6 +309,113 @@ function App() {
           </p>
         </div>
 
+        <button className="project-link">
+          VIEW PROJECT
+          <span>↗</span>
+        </button>
+
+      </div>
+    </div>
+
+    {/* PROJECT SUMMARY */}
+    <div className="project-summary">
+
+      <div className="summary-block">
+        <div className="summary-heading">
+          <span className="summary-dot">•</span>
+          PROBLEM
+        </div>
+
+        <p>
+          Everyday shopping can feel fragmented when products,
+          navigation and purchasing are not designed around the user.
+        </p>
+      </div>
+
+      <div className="summary-block">
+        <div className="summary-heading">
+          <span className="summary-dot">•</span>
+          SOLUTION
+        </div>
+
+        <p>
+          Jirani-Mart brings products, discovery and purchasing
+          into a simple, intuitive e-commerce experience.
+        </p>
+      </div>
+
+      <div className="summary-block">
+        <div className="summary-heading">
+          <span className="summary-dot">•</span>
+          OUTCOME
+        </div>
+
+        <p>
+          A responsive e-commerce concept combining thoughtful
+          UI/UX design with a modern React and TypeScript frontend.
+        </p>
+      </div>
+
+    </div>
+
+    <br/>
+    <br/>
+
+    <div className="project-top">
+      <span className="project-index">
+        02
+      </span>
+
+      <div className="project-year">
+        
+      </div>
+    </div>
+
+    <div className="project-name">
+      <h1>The-Abode</h1>
+    </div>
+
+    <div className="project-details">
+
+      <div className="project-image-wrapper">
+        <img
+          src={TheAbode}
+          alt="The-Abode interface design"
+          className="project-image"
+        />
+      </div>
+
+      <div className="project-info">
+
+        <div className="info-block">
+          <span className="info-label">
+            ROLE
+          </span>
+
+          <p>
+            UI / UX Design · Frontend Development  · Backend Development
+          </p>
+        </div>
+
+        <div className="info-block">
+          <span className="info-label">
+            TECHNOLOGY
+          </span>
+
+          <p>
+            React · TypeScript · Vite · Supabase
+          </p>
+        </div>
+
+        <div className="info-block">
+          <span className="info-label">
+            FOCUS
+          </span>
+
+          <p>
+            Refined hospitality · intuitive booking · responsive design · strong visual identity.
+          </p>
+        </div>
 
         <button className="project-link">
           VIEW PROJECT
@@ -318,13 +423,166 @@ function App() {
         </button>
 
       </div>
+    </div>
+
+    {/* PROJECT SUMMARY */}
+    <div className="project-summary">
+
+      <div className="summary-block">
+        <div className="summary-heading">
+          <span className="summary-dot">•</span>
+          PROBLEM
+        </div>
+
+        <p>
+          Finding and booking a stay should feel effortless,
+           with clear information, intuitive navigation and 
+           a refined experience that reflects the character 
+           of The Abode.
+        </p>
+      </div>
+
+      <div className="summary-block">
+        <div className="summary-heading">
+          <span className="summary-dot">•</span>
+          SOLUTION
+        </div>
+
+        <p>
+        The Abode brings accommodation, discovery, 
+        and booking into a refined, intuitive 
+        hospitality experience.
+        </p>
+      </div>
+
+      <div className="summary-block">
+        <div className="summary-heading">
+          <span className="summary-dot">•</span>
+          OUTCOME
+        </div>
+
+        <p>
+          A responsive hospitality website combining thoughtful
+          UI/UX design with a modern React and TypeScript frontend.
+        </p>
+      </div>
+
+    </div>
+
+<br/>
+<br/>
+
+    <div className="project-top">
+      <span className="project-index">
+        03
+      </span>
+
+      <div className="project-year">
+    
+      </div>
+    </div>
+
+    <div className="project-name">
+      <h1>Face-Tally</h1>
+    </div>
+
+    <div className="project-details">
+
+      <div className="project-image-wrapper">
+        <img
+          src={facetally}
+          alt="facetally interface design"
+          className="project-image"
+        />
+      </div>
+
+      <div className="project-info">
+
+        <div className="info-block">
+          <span className="info-label">
+            ROLE
+          </span>
+
+          <p>
+            UI / UX Design · Frontend Development
+          </p>
+        </div>
+
+        <div className="info-block">
+          <span className="info-label">
+            TECHNOLOGY
+          </span>
+
+          <p>
+            React · TypeScript · Vite · FastAPI · OpenCV
+          </p>
+        </div>
+
+        <div className="info-block">
+          <span className="info-label">
+            FOCUS
+          </span>
+
+          <p>
+           AI · Facial Recognition · Attendance Automation
+          </p>
+        </div>
+
+        <button className="project-link">
+          VIEW PROJECT
+          <span>↗</span>
+        </button>
+
+      </div>
+    </div>
+
+    {/* PROJECT SUMMARY */}
+    <div className="project-summary">
+
+      <div className="summary-block">
+        <div className="summary-heading">
+          <span className="summary-dot">•</span>
+          PROBLEM
+        </div>
+
+        <p>
+          Traditional attendance tracking can be time-consuming
+          and prone to manual errors when students and records 
+          are managed separately.
+        </p>
+      </div>
+
+      <div className="summary-block">
+        <div className="summary-heading">
+          <span className="summary-dot">•</span>
+          SOLUTION
+        </div>
+
+        <p>
+          FaceTally brings facial recognition, attendance tracking 
+          and student records into a simple, intelligent attendance 
+          experience
+        </p>
+      </div>
+
+      <div className="summary-block">
+        <div className="summary-heading">
+          <span className="summary-dot">•</span>
+          OUTCOME
+        </div>
+
+        <p>
+          A responsive attendance system combining thoughtful
+          UI/UX design with facial recognition and a modern 
+          web frontend.
+        </p>
+      </div>
 
     </div>
 
   </article>
 
 </section>
-
       {/* 04 — CONTACT */}
 
       <section id="contact" className="contact page-section">
