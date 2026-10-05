@@ -4,7 +4,7 @@ import TheAbode from './assets/The-Abode.png'
 import facetally from './assets/facetally.png'
 import './App.css'
 
-const sections = ['home', 'about', 'work', 'contact']
+const sections = ['home', 'about', 'work', 'experience', 'contact']
 
 function App() {
   const [activeSection, setActiveSection] = useState(0)
@@ -124,7 +124,7 @@ function App() {
 
   
 <div className="section-counter">
-  [ 0{activeSection + 1} / 04 ]
+  
 </div>
 
 </div>
@@ -583,36 +583,190 @@ function App() {
   </article>
 
 </section>
-      {/* 04 — CONTACT */}
 
-      <section id="contact" className="contact page-section">
 
-        <div className="section-header">
-          <div className="section-number">
-            [ 04 ]
-          </div>
+{/* 04 — EXPERIENCE */}
+<section id="experience" className="experience page-section">
+  <div className="section-header">
+    <div className="section-number">[ 04 ]</div>
+    <div className="section-title">EXPERIENCE</div>
+    <div className="section-line"></div>
+  </div>
 
-          <div className="section-title">
-            CONTACT
-          </div>
+  <div className="experience-timeline">
 
-          <div className="section-line"></div>
+    <article className="experience-item">
+      <div className="experience-marker">
+        <span></span>
+      </div>
+
+      <div className="experience-content">
+        <div className="experience-top">
+          <span className="experience-index">01</span>
+          <h2>Unaitas Sacco</h2>
+          <span className="experience-date">MAY 2026 -JULY 2026</span>
         </div>
 
-        <div className="placeholder-section">
-          <p>LET'S BUILD SOMETHING.</p>
+        <h3>Technical support, Member Care & Marketing</h3>
+
+        <p>
+          Supported member-facing operations while providing 
+          technical assistance with software, system setup, 
+          troubleshooting, and day-to-day IT issues. 
+          Contributed to marketing and outreach activities, 
+          collaborating with users and organizational teams 
+          to resolve issues, improve workflows, and support 
+          smooth operations.
+        </p>
+      </div>
+    </article>
+
+    <article className="experience-item">
+      <div className="experience-marker">
+        <span></span>
+      </div>
+
+      <div className="experience-content">
+        <div className="experience-top">
+          <span className="experience-index">02</span>
+          <h2>Best Budget ICT Solutions</h2>
+          <span className="experience-date">JAN 2026 — APR 2026</span>
         </div>
 
-      </section>
+        <h3>Technical Support</h3>
 
+        <p>
+          Provide technical support across software, operating systems and
+          hardware while troubleshooting client issues. The role has
+          strengthened my ability to diagnose problems, communicate clearly
+          and build practical solutions.
+        </p>
+      </div>
+    </article>
 
-      {/* FOOTER */}
+    <article className="experience-item">
+      <div className="experience-marker">
+        <span></span>
+      </div>
 
-      <footer className="site-footer">
-        <span>IN.</span>
-        <span>© 2026</span>
-      </footer>
+      <div className="experience-content">
+        <div className="experience-top">
+          <span className="experience-index">03</span>
+          <h2>AWS Club</h2>
+          <span className="experience-date">SEPT 2024 - DEC 2025</span>
+        </div>
 
+        <h3>Technology Community Member</h3>
+
+        <p>
+          Participated in AWS Club activities focused on
+          cloud computing, software development, and 
+          emerging technologies. Collaborated with other
+          students on technical discussions, workshops, 
+          and peer learning sessions while building a 
+          stronger understanding of AWS services and 
+          cloud based development.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+{/* 05 — CONTACT */}
+<section id="contact" className="contact page-section">
+  <div className="section-header">
+    <div className="section-number">[ 05 ]</div>
+    <div className="section-title">CONTACT</div>
+    <div className="section-line"></div>
+  </div>
+
+  <div className="contact-content">
+
+    <div className="contact-main">
+      <span className="contact-label"><h3>HAVE A PROJECT IN MIND?</h3></span>
+
+      <h2>
+        LET'S BUILD
+        <br />
+        <span>SOMETHING.</span>
+      </h2>
+
+      <p>
+        I'm open to opportunities, collaborations and interesting
+        projects where design and technology come together.
+      </p>
+
+      <a
+        href="mailto:your-email@example.com"
+        className="contact-button"
+      >
+        GET IN TOUCH
+        <span>↗</span>
+      </a>
+    </div>
+
+    <div className="contact-links">
+
+      <div className="contact-group">
+        <span className="contact-group-label">EMAIL</span>
+
+        <a href="mailto:monikaivy2@gmail.com">
+          monikaivy2@gmail.com
+          <span>↗</span>
+        </a>
+      </div>
+
+      <div className="contact-group">
+        <span className="contact-group-label">ELSEWHERE</span>
+
+        <a href="https://www.linkedin.com/in/ivy-nyambura-616b51376/" target="_blank" rel="noreferrer">
+          LinkedIn
+          <span>↗</span>
+        </a>
+
+        <a href="https://github.com/Ivymnyambura" target="_blank" rel="noreferrer">
+          GitHub
+          <span>↗</span>
+        </a>
+
+        <a href=" https://www.figma.com/@ivymnyambura" target="_blank" rel="noreferrer">
+          Figma
+          <span>↗</span>
+        </a>
+
+        <a href=" +254 114 279499 " target="_blank" rel="noreferrer">
+          Whatsapp
+          <span>↗</span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer className="site-footer">
+  <div className="footer-top">
+    <span className="footer-logo">
+      IN<span>.</span>
+    </span>
+
+    <span>© 2026 — ALL RIGHTS RESERVED</span>
+
+    <span>
+      NAIROBI, KE
+      <i></i>
+      AVAILABLE FOR WORK
+    </span>
+
+    <button onClick={() => scrollToSection('home')}>
+      BACK TO TOP ↑
+    </button>
+  </div>
+</footer>
+
+      
     </main>
   )
 }
