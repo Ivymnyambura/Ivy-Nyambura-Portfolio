@@ -2,9 +2,12 @@ import { useEffect,useState} from 'react'
 import jiraniMart from './assets/jirani-mart.png'
 import TheAbode from './assets/The-Abode.png'
 import facetally from './assets/facetally.png'
+import samuelPhoto from './assets/Samuel.jpeg'
+import abigaelPhoto from './assets/Abigael.jpeg'
+import yvonnePhoto from './assets/Yvonne.jpeg'
 import './App.css'
 
-const sections = ['home', 'about', 'work', 'experience', 'contact']
+const sections = ['home', 'about', 'work', 'experience', 'collaborators', 'contact']
 
 function App() {
   const [activeSection, setActiveSection] = useState(0)
@@ -68,6 +71,10 @@ function App() {
 
   <button onClick={() => scrollToSection('experience')}>
     EXPERIENCE
+  </button>
+
+  <button onClick={() => scrollToSection('collaborators')}>
+    COLLABORATORS
   </button>
 
   <button onClick={() => scrollToSection('contact')}>
@@ -673,10 +680,97 @@ function App() {
   </div>
 </section>
 
-{/* 05 — CONTACT */}
-<section id="contact" className="contact page-section">
+{/* 04 — PEOPLE I'VE BUILT WITH */}
+<section id="collaborators" className="collaborators page-section">
   <div className="section-header">
     <div className="section-number">[ 05 ]</div>
+    <div className="section-title">COLLABORATORS</div>
+    <div className="section-line"></div>
+  </div>
+
+  <div className="collaborator-list">
+
+    <article className="collaborator">
+      <span className="collaborator-number">01</span>
+
+      <div className="collaborator-main">
+        <div className="collaborator-name">
+          <div className="collaborator-photo">
+            <img src={samuelPhoto} alt="Samuel Mundia" />
+          </div>
+          <h3>Samuel Mundia</h3>
+        </div>
+
+        <p className="collaborator-quote">
+          “Good team-player! Had a smooth experience developing
+          and winning awards on Face-Tally with her. ”
+        </p>
+
+        <span className="collaborator-project">
+          FACE TALLY · COLLABORATION
+        </span>
+      </div>
+
+      <span className="collaborator-arrow">↗</span>
+    </article>
+
+    <article className="collaborator">
+      <span className="collaborator-number">02</span>
+
+      <div className="collaborator-main">
+        <div className="collaborator-name">
+          <div className="collaborator-photo">
+            <img src={abigaelPhoto} alt="Abigael Wambui" />
+          </div>
+          <h3>Abigael Wambui</h3>
+        </div>
+
+        <p className="collaborator-quote">
+          “A very creative and smart user interface(UI) Designer
+          & Frontend Developer..
+          Had a good time bouncing off ideas with each other!  ”
+        </p>
+
+        <span className="collaborator-project">
+          AKIDA SPORTS CLUB · COLLABORATION
+        </span>
+      </div>
+
+      <span className="collaborator-arrow">↗</span>
+    </article>
+
+    <article className="collaborator collaborator-abode">
+      <span className="collaborator-number">03</span>
+
+      <div className="collaborator-main">
+        <div className="collaborator-name">
+          <div className="collaborator-photo">
+            <img src={yvonnePhoto} alt="Yvonne Kanyi" />
+          </div>
+          <h3>Yvonne Kanyi</h3>
+        </div>
+
+        <p className="collaborator-quote">
+          “She had very innovative and fresh ideas to contribute
+          to the group members and Club related events,an amazing
+          problem solver and team player. ”
+        </p>
+
+        <span className="collaborator-project">
+          AWS CLUB ·  GROUP TEAM MATE
+        </span>
+      </div>
+
+      <span className="collaborator-arrow">↗</span>
+    </article>
+
+  </div>
+</section>
+
+{/* 06 — CONTACT */}
+<section id="contact" className="contact page-section">
+  <div className="section-header">
+    <div className="section-number">[ 06 ]</div>
     <div className="section-title">CONTACT</div>
     <div className="section-line"></div>
   </div>
