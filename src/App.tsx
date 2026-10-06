@@ -1,7 +1,7 @@
 import { useEffect,useState} from 'react'
 import jiraniMart from './assets/jirani-mart.png'
 import TheAbode from './assets/The-Abode.png'
-import facetally from './assets/facetally.png'
+import facetally from './assets/facetally.jpg'
 import samuelPhoto from './assets/Samuel.jpeg'
 import abigaelPhoto from './assets/Abigael.jpeg'
 import yvonnePhoto from './assets/Yvonne.jpeg'
@@ -13,32 +13,32 @@ function App() {
   const [activeSection, setActiveSection] = useState(0)
 
   useEffect(() => {
-    const observers: IntersectionObserver[] = []
+  const observers: IntersectionObserver[] = []
 
-    sections.forEach((section, index) => {
-      const element = document.getElementById(section)
+  sections.forEach((section, index) => {
+    const element = document.getElementById(section)
+    if (!element) return
 
-      if (!element) return
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setActiveSection(index)
-          }
-        },
-        {
-          threshold: 0.45,
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setActiveSection(index)
+          element.classList.add('is-visible')
         }
-      )
+      },
+      {
+        threshold: 0.2,
+      }
+    )
 
-      observer.observe(element)
-      observers.push(observer)
-    })
+    observer.observe(element)
+    observers.push(observer)
+  })
 
-    return () => {
-      observers.forEach((observer) => observer.disconnect())
-    }
-  }, [])
+  return () => {
+    observers.forEach((observer) => observer.disconnect())
+  }
+}, [])
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
@@ -107,18 +107,14 @@ function App() {
 
 
         <div className="hero-title">
-          <h1>
-  BUILDING
-  <br />
-  <span>DIGITAL</span>
-  <br />
-  EXPERIENCES
-  <br />
-  THAT
-  <br />
-  <span>FEEL AS GOOD</span>
-</h1>
-        </div>
+  <h1>
+    <span className="hero-line">BUILDING</span>
+    <span className="hero-line hero-accent">DIGITAL</span>
+    <span className="hero-line">EXPERIENCES</span>
+    <span className="hero-line">THAT</span>
+    <span className="hero-line hero-accent">FEEL AS GOOD</span>
+  </h1>
+</div>
 
 
         <div className="hero-bottom">
@@ -162,10 +158,10 @@ function App() {
             <h2>IVY<span> M.</span> NYAMBURA</h2><br/>
             
             <p>
-              I'm a software developer and UI / UX designer working
-              at the intersection of engineering and design. My focus
-              is building useful, visually thoughtful digital products
-              interfaces that are as deliberate as the code beneath them.
+              I'm a software developer and UI / UX designer working 
+              at the intersection of engineering and design. I build 
+              useful, visually thoughtful digital experiences that 
+              are as deliberate as the code behind them.
             </p>
           </div>
 
@@ -173,7 +169,7 @@ function App() {
           <div className="toolbox">
 
             <div className="toolbox-heading">
-              <span>TOOLBOX</span>
+              <span>SKILLS</span>
               <span>08</span>
             </div>
 
@@ -181,13 +177,13 @@ function App() {
 
               <div className="tool">
                 <span className="tool-dot">•</span>
-                <span>TYPESCRIPT</span>
+                <span>TYPESCRIPT PROGRAMMING</span>
                 <span>01</span>
               </div>
 
               <div className="tool">
                 <span className="tool-dot">•</span>
-                <span>JAVASCRIPT</span>
+                <span>JAVASCRIPT PROGRAMMING</span>
                 <span>02</span>
               </div>
 
@@ -205,7 +201,7 @@ function App() {
 
               <div className="tool">
                 <span className="tool-dot">•</span>
-                <span>UI / UX</span>
+                <span>UI / UX DESIGN </span>
                 <span>05</span>
               </div>
 
@@ -223,7 +219,7 @@ function App() {
 
               <div className="tool">
                 <span className="tool-dot">•</span>
-                <span>PYTHON</span>
+                <span>PYTHON PROGRAMMING</span>
                 <span>08</span>
               </div>
 
@@ -316,10 +312,15 @@ function App() {
           </p>
         </div>
 
-        <button className="project-link">
-          VIEW PROJECT
-          <span>↗</span>
-        </button>
+        <a
+  href= "https://github.com/Ivymnyambura/Jirani-Mart.git"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="project-link"
+>
+  VIEW PROJECT
+  <span>↗</span>
+</a>
 
       </div>
     </div>
@@ -424,10 +425,13 @@ function App() {
           </p>
         </div>
 
-        <button className="project-link">
-          VIEW PROJECT
-          <span>↗</span>
-        </button>
+        <button
+  className="project-link"
+  onClick={() => window.open("https://github.com/Ivymnyambura/The-Abode.git", "_blank")}
+>
+  VIEW PROJECT
+  <span>↗</span>
+</button>
 
       </div>
     </div>
@@ -535,10 +539,13 @@ function App() {
           </p>
         </div>
 
-        <button className="project-link">
-          VIEW PROJECT
-          <span>↗</span>
-        </button>
+        <button
+  className="project-link"
+  onClick={() => window.open("https://face-tally2-0.vercel.app/", "_blank")}
+>
+  VIEW PROJECT
+  <span>↗</span>
+</button>
 
       </div>
     </div>
@@ -792,7 +799,7 @@ function App() {
       </p>
 
       <a
-        href="mailto:your-email@example.com"
+        href="mailto:monikaivy2@gmail.com"
         className="contact-button"
       >
         GET IN TOUCH
@@ -812,7 +819,7 @@ function App() {
       </div>
 
       <div className="contact-group">
-        <span className="contact-group-label">ELSEWHERE</span>
+        <span className="contact-group-label">SOCIALS</span>
 
         <a href="https://www.linkedin.com/in/ivy-nyambura-616b51376/" target="_blank" rel="noreferrer">
           LinkedIn
@@ -829,7 +836,7 @@ function App() {
           <span>↗</span>
         </a>
 
-        <a href=" +254 114 279499 " target="_blank" rel="noreferrer">
+        <a href="https://wa.me/254114279499?text=Hello%20Ivy%2C%20I%27d%20like%20to%20make%20an%20inquiry."target="_blank" rel="noreferrer">
           Whatsapp
           <span>↗</span>
         </a>
@@ -843,20 +850,23 @@ function App() {
 <footer className="site-footer">
   <div className="footer-top">
     <span className="footer-logo">
-      IN<span>.</span>
+      IN<i className="footer-status-dot"></i>
     </span>
 
     <span>© 2026 — ALL RIGHTS RESERVED</span>
 
     <span>
-      NAIROBI, KE
-      <i></i>
-      AVAILABLE FOR WORK
-    </span>
+  NAIROBI, KE
+  <i className="footer-status-dot"></i>
+  AVAILABLE FOR WORK
+</span>
 
-    <button onClick={() => scrollToSection('home')}>
-      BACK TO TOP ↑
-    </button>
+    <button
+  className="back-to-top"
+  onClick={() => scrollToSection('home')}
+>
+  BACK TO TOP ↑
+</button>
   </div>
 </footer>
 
