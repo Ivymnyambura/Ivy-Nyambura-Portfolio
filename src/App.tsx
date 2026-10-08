@@ -427,7 +427,7 @@ function App() {
 
         <button
   className="project-link"
-  onClick={() => window.open("https://github.com/Ivymnyambura/The-Abode.git", "_blank")}
+  onClick={() => window.open("https://the-abode-teal.vercel.app/", "_blank")}
 >
   VIEW PROJECT
   <span>↗</span>
