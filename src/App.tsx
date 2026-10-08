@@ -10,7 +10,7 @@ import './App.css'
 const sections = ['home', 'about', 'work', 'experience', 'collaborators', 'contact']
 
 function App() {
-  const [activeSection, setActiveSection] = useState(0)
+  const [, setActiveSection] = useState(0)
 
   useEffect(() => {
   const observers: IntersectionObserver[] = []
