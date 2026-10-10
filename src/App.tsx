@@ -6,7 +6,7 @@ import facetally from './assets/facetally.jpg'
 import samuelPhoto from './assets/Samuel.jpeg'
 import abigaelPhoto from './assets/Abigael.jpeg'
 import yvonnePhoto from './assets/Yvonne.jpeg'
-import potrait from './assets/Potrait.jpeg'
+import potrait from './assets/potrait.jpeg'
 import './App.css'
 
 const sections = [
