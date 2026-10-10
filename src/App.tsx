@@ -650,7 +650,7 @@ function App() {
               </span>
             </div>
 
-            <span className="collaborator-arrow">↗</span>
+            <span className="collaborator-arrow"></span>
           </article>
 
           <article className="collaborator">
@@ -675,7 +675,7 @@ function App() {
               </span>
             </div>
 
-            <span className="collaborator-arrow">↗</span>
+            <span className="collaborator-arrow"></span>
           </article>
 
           <article className="collaborator collaborator-abode">
@@ -700,7 +700,7 @@ function App() {
               </span>
             </div>
 
-            <span className="collaborator-arrow">↗</span>
+            <span className="collaborator-arrow"></span>
           </article>
         </div>
       </section>
