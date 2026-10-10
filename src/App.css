@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,500;1,600&display=swap');
 
 .counter {
   font-size: 16px;
@@ -1034,3 +1035,1619 @@ svg {
   }
 }
 
+
+/* ==========================================
+   IVY PORTFOLIO — EDITORIAL POLAROID HERO
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Nothing+You+Could+Do&display=swap');
+
+:root {
+  --accent: #ff4fa3;
+}
+
+/* Hero foundation */
+
+#home.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - 70px);
+  padding: 38px clamp(20px, 4.5vw, 72px) 28px;
+  background: #090909;
+  color: #f5f5f5;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Subtle editorial background grid */
+
+#home.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: linear-gradient(to bottom, transparent, black 30%, transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Top metadata */
+
+#home .hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  opacity: 1;
+  transform: none;
+}
+
+#home .role,
+#home .availability-text {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #a0a0a0;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: .13em;
+}
+
+#home .availability-text {
+  align-items: flex-end;
+  text-align: right;
+}
+
+#home .availability-text i {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 14px rgba(255,79,163,.45);
+}
+
+#home .availability-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #e5e5e5;
+}
+
+#home .availability-status i {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 14px rgba(255,79,163,.45);
+}
+
+/* Main hero composition */
+
+#home .hero-content {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.35fr);
+  align-items: center;
+  gap: clamp(35px, 6vw, 110px);
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+  padding: 80px 0;
+}
+
+/* Polaroid */
+
+#home .polaroid-wrap {
+  position: relative;
+  width: min(100%, 400px);
+  margin: 0 auto;
+  transform: rotate(-6deg);
+  animation: polaroidEnter 1s cubic-bezier(.22,1,.36,1) both;
+  transition: transform .5s cubic-bezier(.22,1,.36,1);
+}
+
+#home .polaroid-wrap:hover {
+  transform: rotate(-1deg) translateY(-12px);
+}
+
+#home .polaroid {
+  position: relative;
+  padding: 17px 17px 23px;
+  background: #f5f2eb;
+  box-shadow: 0 28px 75px rgba(0,0,0,.65);
+}
+
+#home .polaroid-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 4.7;
+  object-fit: cover;
+  object-position: center;
+  filter: contrast(1.04);
+}
+
+#home .polaroid-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 8px 0;
+  color: #151515;
+}
+
+#home .handwritten-name {
+  font-family: 'Nothing You Could Do', cursive;
+  font-size: clamp(19px, 2.3vw, 28px);
+  letter-spacing: -.06em;
+  line-height: 1.4;
+}
+
+#home .polaroid-role {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: .14em;
+  color: #555;
+}
+
+#home .polaroid-tape {
+  position: absolute;
+  top: -19px;
+  left: 35%;
+  width: 110px;
+  height: 36px;
+  background: rgba(185,185,185,.45);
+  transform: rotate(4deg);
+  z-index: 3;
+  backdrop-filter: blur(3px);
+}
+
+#home .polaroid-index {
+  position: absolute;
+  bottom: -42px;
+  right: 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: #777;
+  letter-spacing: .18em;
+}
+
+/* Editorial typography */
+
+#home .hero-title {
+  min-width: 0;
+  width: 100%;
+  text-align: left;
+}
+
+#home .hero-eyebrow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+  color: #929292;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .15em;
+}
+
+#home .hero-eyebrow i {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+#home .hero-title h1 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(58px, 7.4vw, 128px);
+  font-weight: 400;
+  line-height: .91;
+  letter-spacing: -.075em;
+}
+
+#home .hero-line {
+  display: block;
+  color: #f5f5f5;
+  opacity: 0;
+  transform: translateY(35px);
+  animation: editorialLineReveal .85s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+#home .hero-line:nth-child(1) {
+  animation-delay: .15s;
+}
+
+#home .hero-line:nth-child(2) {
+  animation-delay: .27s;
+}
+
+#home .hero-line:nth-child(3) {
+  animation-delay: .39s;
+}
+
+#home .hero-line:nth-child(4) {
+  animation-delay: .51s;
+}
+
+#home .hero-title .hero-accent,
+#home .hero-title .hero-period {
+  color: var(--accent);
+}
+
+#home .hero-title .hero-subtitle {
+  font-size: clamp(28px, 3.5vw, 58px);
+  letter-spacing: -.055em;
+  line-height: 1.12;
+}
+
+#home .hero-title .hero-subtitle:nth-child(3) {
+  margin-top: 25px;
+}
+
+/* Hero CTA */
+
+#home .hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 35px;
+  margin-top: 45px;
+}
+
+#home .hero-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  padding: 15px 0;
+  border: 0;
+  border-bottom: 1px solid var(--accent);
+  border-radius: 0;
+  background: transparent;
+  color: #f5f5f5;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .14em;
+  cursor: pointer;
+  transition: color .3s ease, gap .3s ease;
+}
+
+#home .hero-explore:hover {
+  color: var(--accent);
+  gap: 34px;
+}
+
+#home .hero-explore span {
+  color: var(--accent);
+  font-size: 20px;
+}
+
+#home .hero-side-note {
+  color: #777;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: .13em;
+  line-height: 1.8;
+}
+
+/* Bottom editorial rule */
+
+#home .hero-bottom {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  opacity: 1;
+  transform: none;
+}
+
+#home .hero-scroll,
+#home .section-counter {
+  flex-shrink: 0;
+  color: #999;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .16em;
+}
+
+#home .hero-scroll span,
+#home .section-counter {
+  color: var(--accent);
+}
+
+#home .hero-bottom-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,.12);
+}
+
+/* Animations */
+
+@keyframes polaroidEnter {
+  from {
+    opacity: 0;
+    transform: translateY(60px) rotate(-12deg) scale(.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(-6deg) scale(1);
+  }
+}
+
+@keyframes editorialLineReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  #home .hero-content {
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    gap: 35px;
+  }
+
+  #home .hero-title h1 {
+    font-size: clamp(45px, 6.5vw, 80px);
+  }
+
+  #home .hero-title .hero-subtitle {
+    font-size: clamp(26px, 3.5vw, 40px);
+  }
+}
+
+/* Phone */
+
+@media (max-width: 768px) {
+  #home.hero {
+    min-height: auto;
+    padding: 28px 20px 25px;
+  }
+
+  #home .hero-top {
+    gap: 12px;
+  }
+
+  #home .role,
+  #home .availability-text {
+    font-size: 8px;
+    letter-spacing: .08em;
+  }
+
+  #home .hero-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 85px;
+    padding: 65px 0 55px;
+  }
+
+  #home .polaroid-wrap {
+    width: min(76%, 310px);
+  }
+
+  #home .hero-title h1 {
+    font-size: clamp(43px, 12vw, 76px);
+  }
+
+  #home .hero-title .hero-subtitle {
+    font-size: clamp(26px, 7.4vw, 44px);
+  }
+
+  #home .hero-eyebrow {
+    font-size: 8px;
+    gap: 8px;
+  }
+
+  #home .hero-actions {
+    margin-top: 35px;
+    gap: 20px;
+  }
+
+  #home .hero-bottom {
+    gap: 14px;
+  }
+
+  #home .hero-scroll,
+  #home .section-counter {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  #home .hero-title h1 {
+    font-size: 12vw;
+  }
+
+  #home .hero-content {
+    gap: 65px;
+  }
+
+  #home .polaroid-wrap {
+    width: 78%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #home .hero-line,
+  #home .polaroid-wrap {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==========================================
+   HERO TOP VISIBILITY + COORDINATES
+   DESKTOP / TABLET / PHONE
+========================================== */
+
+/* Keep hero metadata visible above decorative elements */
+
+#home .hero-top {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+#home .hero-top .role,
+#home .hero-top .availability-text {
+  position: relative;
+  display: flex !important;
+  flex-direction: column;
+  gap: 7px;
+  width: auto;
+  max-width: none;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  color: #c5c5c5;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: .12em;
+}
+
+#home .hero-top .role span,
+#home .hero-top .availability-text span {
+  color: inherit;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#home .hero-location {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 28px;
+  min-width: 0;
+}
+
+#home .hero-location .availability-text {
+  align-items: flex-end;
+  text-align: right;
+}
+
+#home .availability-status {
+  display: inline-flex !important;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  color: #f0f0f0 !important;
+}
+
+#home .availability-status i {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  background: #ff4fa3;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(255, 79, 163, .5);
+}
+
+/* Coordinate graphic */
+
+#home .hero-coordinates {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  opacity: .9;
+}
+
+#home .coordinate-grid {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  flex-shrink: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.09) 1px, transparent 1px);
+  background-size: 18px 18px;
+  mask-image: radial-gradient(circle, black 35%, transparent 76%);
+}
+
+#home .coordinate-cross {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 34px;
+  height: 34px;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 9px rgba(255,79,163,.7));
+}
+
+#home .coordinate-cross::before,
+#home .coordinate-cross::after {
+  content: '';
+  position: absolute;
+  background: #ff4fa3;
+}
+
+#home .coordinate-cross::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+#home .coordinate-cross::after {
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+}
+
+#home .coordinate-text {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  color: #a0a0a0;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .17em;
+  white-space: nowrap;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  #home .hero-top {
+    gap: 18px;
+  }
+
+  #home .hero-location {
+    gap: 18px;
+  }
+
+  #home .coordinate-grid {
+    width: 68px;
+    height: 68px;
+    background-size: 14px 14px;
+  }
+
+  #home .coordinate-text {
+    font-size: 9px;
+  }
+}
+
+/* Phone */
+
+@media (max-width: 768px) {
+  #home .hero-top {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  #home .hero-top .role,
+  #home .hero-top .availability-text {
+    font-size: 9px;
+    line-height: 1.5;
+    letter-spacing: .04em;
+  }
+
+  #home .hero-location {
+    gap: 14px;
+  }
+
+  #home .hero-coordinates {
+    gap: 8px;
+  }
+
+  #home .coordinate-grid {
+    width: 45px;
+    height: 45px;
+    background-size: 10px 10px;
+  }
+
+  #home .coordinate-cross {
+    width: 20px;
+    height: 20px;
+  }
+
+  #home .coordinate-text {
+    font-size: 7px;
+    letter-spacing: .04em;
+    gap: 5px;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 420px) {
+  #home .hero-top .role,
+  #home .hero-top .availability-text {
+    font-size: 8px;
+  }
+
+  #home .hero-coordinates {
+    gap: 5px;
+  }
+
+  #home .coordinate-grid {
+    width: 34px;
+    height: 34px;
+  }
+
+  #home .coordinate-cross {
+    width: 16px;
+    height: 16px;
+  }
+
+  #home .coordinate-text {
+    font-size: 6px;
+  }
+}
+
+/* ==========================================
+   HERO — TOP SPACING & BACKGROUND COMPASS
+========================================== */
+
+/* Lower the top labels slightly */
+
+#home .hero-top {
+  padding-top: 35px;
+}
+
+/* Keep both labels aligned */
+
+#home .hero-top .role,
+#home .hero-location .availability-text {
+  margin-top: 0;
+}
+
+/* Allow compass to sit on the background */
+
+#home .hero-location {
+  position: relative;
+}
+
+/* Larger compass, blended into the grid */
+
+#home .hero-coordinates {
+  position: absolute;
+  top: 115px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#home .coordinate-grid {
+  width: 145px;
+  height: 145px;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.07) 1px,
+      transparent 1px
+    );
+
+  background-size: 20px 20px;
+
+  mask-image: radial-gradient(
+    circle,
+    black 30%,
+    transparent 75%
+  );
+}
+
+/* Slightly larger glowing pink crosshair */
+
+#home .coordinate-cross {
+  width: 42px;
+  height: 42px;
+
+  filter: drop-shadow(
+    0 0 12px rgba(255, 79, 163, 0.65)
+  );
+}
+
+/* Coordinate text */
+
+#home .coordinate-text {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #888;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+  #home .hero-top {
+    padding-top: 25px;
+  }
+
+  #home .hero-coordinates {
+    top: 100px;
+    right: 0;
+    gap: 12px;
+  }
+
+  #home .coordinate-grid {
+    width: 105px;
+    height: 105px;
+  }
+
+  #home .coordinate-cross {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* ==========================================
+   PHONE
+========================================== */
+
+@media (max-width: 768px) {
+  #home .hero-top {
+    padding-top: 20px;
+  }
+
+  #home .hero-coordinates {
+    position: absolute;
+    top: 85px;
+    right: 0;
+    gap: 8px;
+  }
+
+  #home .coordinate-grid {
+    width: 65px;
+    height: 65px;
+    background-size: 12px 12px;
+  }
+
+  #home .coordinate-cross {
+    width: 24px;
+    height: 24px;
+  }
+
+  #home .coordinate-text {
+    font-size: 8px;
+    letter-spacing: 0.05em;
+  }
+}
+/* ==========================================
+   HERO — LOWER TOP LABELS + PINK TEXT
+========================================== */
+
+#home .hero-top {
+  padding-top: 60px;
+}
+
+/* Software Developer and UI/UX Designer */
+
+#home .hero-top .role,
+#home .hero-top .role span {
+  color: #ff4fa3 !important;
+}
+
+/* Nairobi location and availability */
+
+#home .hero-location .availability-text,
+#home .hero-location .availability-text span {
+  color: #ff4fa3 !important;
+}
+
+/* Keep the availability dot pink */
+
+#home .availability-status i {
+  background: #ff4fa3;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  #home .hero-top {
+    padding-top: 45px;
+  }
+}
+
+/* Phone */
+
+@media (max-width: 768px) {
+  #home .hero-top {
+    padding-top: 35px;
+  }
+}
+/* ==========================================
+   PORTFOLIO — GLOBAL EDITORIAL GRID
+========================================== */
+
+#about,
+#work,
+#experience,
+#collaborators,
+#contact {
+  position: relative;
+  isolation: isolate;
+  background-color: #090909;
+}
+
+/* Subtle grid lines */
+
+#about::before,
+#work::before,
+#experience::before,
+#collaborators::before,
+#contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: -1;
+}
+/* ==========================================
+   PORTFOLIO — PINK CROSSHAIR DETAILS
+========================================== */
+
+#about::after,
+#work::after,
+#experience::after,
+#collaborators::after,
+#contact::after {
+  content: "";
+  position: absolute;
+
+  width: 145px;
+  height: 145px;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      #ff4fa3,
+      #ff4fa3
+    ),
+    linear-gradient(
+      #ff4fa3,
+      #ff4fa3
+    );
+
+  background-size:
+    20px 20px,
+    20px 20px,
+    42px 1px,
+    1px 42px;
+
+  background-position:
+    center,
+    center,
+    center,
+    center;
+
+  background-repeat:
+    repeat,
+    repeat,
+    no-repeat,
+    no-repeat;
+
+  mask-image: radial-gradient(
+    circle,
+    black 30%,
+    transparent 75%
+  );
+
+  opacity: 0.75;
+  pointer-events: none;
+  z-index: 0;
+
+  filter: drop-shadow(
+    0 0 10px rgba(255, 79, 163, 0.35)
+  );
+}
+/* ==========================================
+   SECTION-SPECIFIC COMPASS PLACEMENT
+========================================== */
+
+/* ABOUT — top right */
+
+#about::after {
+  top: 120px;
+  right: 5%;
+}
+
+/* SELECTED WORK — left side */
+
+#work::after {
+  top: 180px;
+  left: 3%;
+}
+
+/* EXPERIENCE — right side */
+
+#experience::after {
+  top: 220px;
+  right: 5%;
+}
+
+/* COLLABORATORS — left side */
+
+#collaborators::after {
+  top: 130px;
+  left: 4%;
+}
+
+/* CONTACT — right side */
+
+#contact::after {
+  top: 150px;
+  right: 6%;
+}
+/* ==========================================
+   RESPONSIVE GRID & COMPASS
+========================================== */
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  #about::after,
+  #work::after,
+  #experience::after,
+  #collaborators::after,
+  #contact::after {
+    width: 105px;
+    height: 105px;
+
+    background-size:
+      16px 16px,
+      16px 16px,
+      32px 1px,
+      1px 32px;
+
+    opacity: 0.6;
+  }
+}
+
+/* Phone */
+
+@media (max-width: 768px) {
+  #about::before,
+  #work::before,
+  #experience::before,
+  #collaborators::before,
+  #contact::before {
+    background-size: 55px 55px;
+    opacity: 0.5;
+  }
+
+  #about::after,
+  #work::after,
+  #experience::after,
+  #collaborators::after,
+  #contact::after {
+    width: 65px;
+    height: 65px;
+
+    background-size:
+      12px 12px,
+      12px 12px,
+      24px 1px,
+      1px 24px;
+
+    opacity: 0.45;
+  }
+
+  #about::after,
+  #experience::after,
+  #contact::after {
+    right: 15px;
+  }
+
+  #work::after,
+  #collaborators::after {
+    left: 15px;
+  }
+}
+/* ==========================================
+   POLAROID — BODONI MODA SIGNATURE
+========================================== */
+
+#home .polaroid-caption .handwritten-name {
+  font-family: 'Bodoni Moda', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(26px, 2.8vw, 36px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+  color: #171717;
+}
+
+/* Phone */
+
+@media (max-width: 768px) {
+  #home .polaroid-caption .handwritten-name {
+    font-size: clamp(23px, 6vw, 30px);
+  }
+}
+/* NAIROBI LOCATION INDICATOR */
+
+#home .location-label {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  color: #ff4fa3 !important;
+}
+
+#home .location-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #ff4fa3;
+  box-shadow: 0 0 10px rgba(255, 79, 163, 0.65);
+}
+
+
+/* ==========================================
+   SELECTED WORK — PROJECT INFO PANELS
+========================================== */
+
+#work .project-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 30px;
+}
+
+#work .project-details-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+#work .project-panel-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+#work .project-panel-heading {
+  color: #ff4fa3;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+#work .project-panel-role {
+  margin: 0;
+  color: #f5f5f5;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+#work .project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#work .project-tech-tags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.015);
+  color: #bcbcbc;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  line-height: 1.3;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+#work .project-tech-tags span:hover {
+  color: #ff4fa3;
+  border-color: #ff4fa3;
+  background: rgba(255, 79, 163, 0.07);
+}
+
+#work .project-panel-specs {
+  display: flex;
+  flex-direction: column;
+}
+
+#work .project-panel-spec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#work .project-panel-spec > span {
+  color: #888;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+#work .project-panel-spec strong {
+  color: #f5f5f5;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: right;
+}
+
+#work .project-panel-spec .project-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  color: #ff4fa3;
+}
+
+#work .project-status i {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #ff4fa3;
+  box-shadow: 0 0 9px rgba(255, 79, 163, 0.6);
+}
+
+/* Keep the existing View Project button below the panel */
+
+#work .project-info .project-link {
+  align-self: flex-start;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  #work .project-details-panel {
+    gap: 26px;
+  }
+
+  #work .project-panel-role {
+    font-size: 14px;
+  }
+
+  #work .project-tech-tags span {
+    padding: 8px 10px;
+  }
+}
+
+/* PHONE */
+
+@media (max-width: 768px) {
+  #work .project-info {
+    width: 100%;
+    gap: 24px;
+  }
+
+  #work .project-details-panel {
+    gap: 25px;
+  }
+
+  #work .project-panel-role {
+    font-size: 14px;
+  }
+
+  #work .project-panel-spec {
+    padding: 13px 0;
+  }
+
+  #work .project-panel-spec strong {
+    font-size: 11px;
+  }
+
+  #work .project-tech-tags span {
+    font-size: 10px;
+    padding: 8px 10px;
+  }
+}
+
+/* ==========================================
+   HERO — PRESERVE DESKTOP COMPOSITION
+   ON TABLET AND PHONE
+========================================== */
+
+@media (max-width: 1024px) {
+
+  #home .hero-content {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: clamp(12px, 3vw, 35px);
+  }
+
+  #home .polaroid-wrap,
+  #home .hero-title {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #home .hero-title h1 {
+    font-size: clamp(35px, 6.5vw, 75px);
+    line-height: 0.98;
+  }
+
+  #home .hero-line {
+    display: block;
+  }
+}
+
+/* PHONE */
+
+@media (max-width: 768px) {
+
+  #home.hero {
+    min-height: 100svh;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Two columns, not stacked */
+
+  #home .hero-content {
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr) !important;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 48px 0 30px;
+  }
+
+  /* Left — Polaroid */
+
+  #home .polaroid-wrap {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    transform: rotate(-5deg);
+  }
+
+  #home .polaroid {
+    width: 100%;
+    padding: 7px 7px 10px;
+  }
+
+  #home .polaroid-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 4.7;
+    object-fit: cover;
+  }
+
+  #home .polaroid-caption {
+    padding-top: 7px;
+  }
+
+  #home .polaroid-caption .handwritten-name {
+    font-size: clamp(14px, 3.5vw, 22px);
+    line-height: 1.1;
+  }
+
+  #home .polaroid-role {
+    font-size: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  #home .polaroid-index {
+    font-size: 7px;
+  }
+
+  /* Right — Headline */
+
+  #home .hero-title {
+    width: 100%;
+    min-width: 0;
+    text-align: left;
+  }
+
+  #home .hero-title h1 {
+    margin: 12px 0;
+    font-size: clamp(23px, 6vw, 46px);
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  #home .hero-line {
+    display: block;
+    white-space: nowrap;
+  }
+
+  #home .hero-title .hero-subtitle {
+    font-size: 0.47em;
+    letter-spacing: -0.025em;
+    line-height: 1.3;
+  }
+
+  #home .hero-eyebrow {
+    font-size: 6px;
+    letter-spacing: 0.03em;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  #home .hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  #home .hero-explore {
+    font-size: 8px;
+    padding: 10px 11px;
+    white-space: nowrap;
+  }
+
+  #home .hero-side-note {
+    font-size: 7px;
+    line-height: 1.5;
+  }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 380px) {
+
+  #home.hero {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  #home .hero-content {
+    gap: 9px;
+  }
+
+  #home .hero-title h1 {
+    font-size: clamp(21px, 5.7vw, 30px);
+  }
+
+  #home .polaroid-caption .handwritten-name {
+    font-size: 13px;
+  }
+
+  #home .hero-explore {
+    font-size: 7px;
+    padding: 8px;
+  }
+}
+
+/* ==========================================
+   WORK — EDITORIAL PROJECT SUMMARIES
+========================================== */
+
+#work .project-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 50px;
+  margin-bottom: 90px;
+  padding: 30px 0;
+  border-top: 1px solid rgba(255, 79, 163, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+}
+
+#work .summary-block {
+  min-width: 0;
+  padding: 10px 28px;
+  background: transparent;
+  border: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+  transition: background 0.3s ease;
+}
+
+#work .summary-block:first-child {
+  padding-left: 0;
+}
+
+#work .summary-block:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+#work .summary-block:hover {
+  background: rgba(255, 79, 163, 0.035);
+}
+
+#work .summary-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: #ff4fa3;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+#work .summary-dot {
+  color: #ff4fa3;
+  font-size: 17px;
+  line-height: 1;
+}
+
+#work .summary-block p {
+  margin: 0;
+  color: #b5b5b5;
+  font-size: clamp(13px, 1.1vw, 15px);
+  line-height: 1.85;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  #work .summary-block {
+    padding: 10px 18px;
+  }
+
+  #work .project-summary {
+    margin-top: 35px;
+    margin-bottom: 65px;
+  }
+}
+
+/* PHONE — KEEP THE EDITORIAL LOOK */
+
+@media (max-width: 768px) {
+  #work .project-summary {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+    margin-bottom: 55px;
+    padding: 12px 0;
+  }
+
+  #work .summary-block,
+  #work .summary-block:first-child,
+  #work .summary-block:last-child {
+    padding: 22px 4px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  #work .summary-block:last-child {
+    border-bottom: 0;
+  }
+
+  #work .summary-heading {
+    margin-bottom: 10px;
+  }
+
+  #work .summary-block p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+}
+/* ==========================================
+   CONTACT — PINK SVG ARROWS
+========================================== */
+
+#contact .contact-arrow {
+  width: 16px;
+  height: 16px;
+  color: #ff4fa3;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+#contact .contact-group a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#contact .contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#contact a:hover .contact-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* Phone */
+
+@media (max-width: 768px) {
+  #contact .contact-arrow {
+    width: 14px;
+    height: 14px;
+  }
+
+  #contact .contact-group a {
+    gap: 8px;
+  }
+}
+/* HERO — LOWER ROLE AND LOCATION LABELS ON PHONE */
+
+@media (max-width: 768px) {
+  #home .hero-top {
+    padding-top: 75px !important;
+  }
+
+  #home .hero-top .role,
+  #home .hero-top .availability-text {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}

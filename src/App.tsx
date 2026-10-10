@@ -6,6 +6,7 @@ import facetally from './assets/facetally.jpg'
 import samuelPhoto from './assets/Samuel.jpeg'
 import abigaelPhoto from './assets/Abigael.jpeg'
 import yvonnePhoto from './assets/Yvonne.jpeg'
+import potrait from './assets/Potrait.jpeg'
 import './App.css'
 
 const sections = [
@@ -25,6 +26,26 @@ const menuItems = [
   { id: 'collaborators', label: 'Collaborators', number: '05' },
   { id: 'contact', label: 'Contact', number: '06' },
 ]
+
+function ContactArrow() {
+  return (
+    <svg
+      className="contact-arrow"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M13 5H19V11" />
+      <path d="M19 5L5 19" />
+    </svg>
+  )
+}
 
 function App() {
   const [, setActiveSection] = useState(0)
@@ -175,46 +196,112 @@ function App() {
       </aside>
 
       {/* 01 — HERO */}
-      <section id="home" className="hero page-section">
-        <div className="hero-top">
-          <div className="role">
-            <span> </span>
-            <span>
-              IVY M. NYAMBURA
-              <br />
-              SOFTWARE DEVELOPER &amp; UI / UX DESIGNER
-            </span>
-          </div>
+      
+{/* 01 — HERO */}
+<section id="home" className="hero page-section">
+  <div className="hero-top">
+    <div className="role">
+      <span>SOFTWARE DEVELOPER</span>
+      <span>UI / UX DESIGNER</span>
+    </div>
 
-          <div className="availability-text">
-            <span></span>
-            <span>NAIROBI, KE</span>
-          </div>
+    <div className="hero-location">
+  <div className="availability-text">
+    <span className="location-label">
+  <span className="location-dot"></span>
+  NAIROBI, KE
+</span>
+    <span className="availability-status">
+      
+    </span>
+  </div>
+
+  <div className="hero-coordinates">
+    <div className="coordinate-grid">
+      <span className="coordinate-cross"></span>
+    </div>
+
+    <div className="coordinate-text">
+      <span>01.2833° S</span>
+      <span>36.8167° E</span>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div className="hero-content">
+    <div className="polaroid-wrap">
+      <div className="polaroid-tape" />
+
+      <div className="polaroid">
+        <img
+  src={potrait}
+  alt="Portrait of Ivy M. Nyambura"
+  className="polaroid-photo"
+/>
+
+        <div className="polaroid-caption">
+          <span className="handwritten-name">
+            Ivy M. Nyambura
+          </span>
+          <span className="polaroid-role">
+            SOFTWARE DEVELOPER · UI / UX
+          </span>
         </div>
+      </div>
 
-        <div className="hero-title">
-          <h1>
-            <span className="hero-line">BUILDING</span>
-            <span className="hero-line hero-accent">DIGITAL</span>
-            <span className="hero-line">EXPERIENCES</span>
-            <span className="hero-line">THAT</span>
-            <span className="hero-line hero-accent">FEEL AS GOOD</span>
-          </h1>
-        </div>
+      <span className="polaroid-index"></span>
+    </div>
 
-        <div className="hero-bottom">
-          <div className="hero-meta">
-            <span>
-              IVY MONICA NYAMBURA
-              <br />
-              SOFTWARE DEVELOPER · UI / UX DESIGNER
-            </span>
-            <span />
-          </div>
+    <div className="hero-title">
+      <span className="hero-eyebrow">
+        DESIGN <i /> ENGINEERING <i /> DEVELOPMENT
+      </span>
 
-          <div className="section-counter" />
-        </div>
-      </section>
+      <h1>
+        <span className="hero-line">IVY M.</span>
+        <span className="hero-line hero-accent">
+          NYAMBURA<span className="hero-period">.</span>
+        </span>
+        <span className="hero-line hero-subtitle">
+          DESIGN MEETS
+        </span>
+        <span className="hero-line hero-subtitle">
+          ENGINEERING.
+        </span>
+      </h1>
+
+      <div className="hero-actions">
+        <button
+          className="hero-explore"
+          onClick={() => {
+            document.getElementById('work')?.scrollIntoView({
+              behavior: 'smooth',
+            })
+          }}
+        >
+          EXPLORE MY WORK <span>↘</span>
+        </button>
+
+        <span className="hero-side-note">
+          THOUGHTFUL BY DESIGN.<br />
+          BUILT WITH PURPOSE.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div className="hero-bottom">
+    <span className="hero-scroll">
+       <span></span>
+    </span>
+
+    <div className="hero-bottom-line" />
+
+    <span className="section-counter"></span>
+  </div>
+</section>
+
 
       {/* 02 — ABOUT */}
       <section id="about" className="about page-section">
@@ -275,268 +362,321 @@ function App() {
           <div className="project-count">3 PROJECTS</div>
         </div>
 
-        <article className="featured-project">
-          {/* PROJECT 01 — JIRANI-MART */}
-          <div className="project-top">
-            <span className="project-index">01</span>
-            <div className="project-year">2026</div>
+        
+<article className="featured-project">
+  {/* PROJECT 01 — JIRANI-MART */}
+  <div className="project-top">
+    <span className="project-index">01</span>
+    <div className="project-year">2026</div>
+  </div>
+
+  <div className="project-name">
+    <h1>Jirani-Mart</h1>
+  </div>
+
+  <div className="project-details">
+    <div className="project-image-wrapper">
+      <img
+        src={jiraniMart}
+        alt="Jirani-Mart interface design"
+        className="project-image"
+      />
+    </div>
+
+    <div className="project-info">
+      <div className="project-details-panel">
+        <div className="project-panel-group">
+          <span className="project-panel-heading">ROLE</span>
+          <p className="project-panel-role">
+            UI / UX Design · Frontend Development · Backend Development
+          </p>
+        </div>
+
+        <div className="project-panel-group">
+          <span className="project-panel-heading">TECHNOLOGIES</span>
+          <div className="project-tech-tags">
+            <span>React</span>
+            <span>TypeScript</span>
+            <span>Vite</span>
           </div>
+        </div>
 
-          <div className="project-name">
-            <h1>Jirani-Mart</h1>
+        <div className="project-panel-specs">
+          <div className="project-panel-spec">
+            <span>TYPE</span>
+            <strong>E-commerce Website</strong>
           </div>
-
-          <div className="project-details">
-            <div className="project-image-wrapper">
-              <img
-                src={jiraniMart}
-                alt="Jirani-Mart interface design"
-                className="project-image"
-              />
-            </div>
-
-            <div className="project-info">
-              <div className="info-block">
-                <span className="info-label">ROLE</span>
-                <p>UI / UX Design · Frontend Development</p>
-              </div>
-
-              <div className="info-block">
-                <span className="info-label">TECHNOLOGY</span>
-                <p>React · TypeScript · Vite</p>
-              </div>
-
-              <div className="info-block">
-                <span className="info-label">FOCUS</span>
-                <p>E-commerce · User Experience</p>
-              </div>
-
-              <a
-                href="https://github.com/Ivymnyambura/Jirani-Mart"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link"
-              >
-                VIEW PROJECT <span>↗</span>
-              </a>
-            </div>
+          <div className="project-panel-spec">
+            <span>SCOPE</span>
+            <strong>Frontend · UI/UX · Backend</strong>
           </div>
-
-          <div className="project-summary">
-            <div className="summary-block">
-              <div className="summary-heading">
-                <span className="summary-dot">•</span>
-                PROBLEM
-              </div>
-              <p>
-                Everyday shopping can feel fragmented when products,
-                navigation and purchasing are not designed around the user.
-              </p>
-            </div>
-
-            <div className="summary-block">
-              <div className="summary-heading">
-                <span className="summary-dot">•</span>
-                SOLUTION
-              </div>
-              <p>
-                Jirani-Mart brings products, discovery and purchasing into a
-                simple, intuitive e-commerce experience.
-              </p>
-            </div>
-
-            <div className="summary-block">
-              <div className="summary-heading">
-                <span className="summary-dot">•</span>
-                OUTCOME
-              </div>
-              <p>
-                A responsive e-commerce concept combining thoughtful UI/UX
-                design with a modern React and TypeScript frontend.
-              </p>
-            </div>
+          <div className="project-panel-spec">
+            <span>STATUS</span>
+            <strong className="project-status">
+              <i />
+              Portfolio Project
+            </strong>
           </div>
+        </div>
+      </div>
 
-          {/* PROJECT 02 — THE ABODE */}
-          <div className="project-top">
-            <span className="project-index">02</span>
-            <div className="project-year" />
+      <a
+        href="https://github.com/Ivymnyambura/Jirani-Mart"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="project-link"
+      >
+        VIEW PROJECT <span>↗</span>
+      </a>
+    </div>
+  </div>
+
+  <div className="project-summary">
+    <div className="summary-block">
+      <div className="summary-heading">
+        <span className="summary-dot">•</span>
+        PROBLEM
+      </div>
+      <p>
+        Everyday shopping can feel fragmented when products,
+        navigation and purchasing are not designed around the user.
+      </p>
+    </div>
+
+    <div className="summary-block">
+      <div className="summary-heading">
+        <span className="summary-dot">•</span>
+        SOLUTION
+      </div>
+      <p>
+        Jirani-Mart brings products, discovery and purchasing into a
+        simple, intuitive e-commerce experience.
+      </p>
+    </div>
+
+    <div className="summary-block">
+      <div className="summary-heading">
+        <span className="summary-dot">•</span>
+        OUTCOME
+      </div>
+      <p>
+        A responsive e-commerce concept combining thoughtful UI/UX
+        design with a modern React and TypeScript frontend.
+      </p>
+    </div>
+  </div>
+
+  {/* PROJECT 02 — THE ABODE */}
+  <div className="project-top">
+    <span className="project-index">02</span>
+    <div className="project-year" />
+  </div>
+
+  <div className="project-name">
+    <h1>The-Abode</h1>
+  </div>
+
+  <div className="project-details">
+    <div className="project-image-wrapper">
+      <img
+        src={TheAbode}
+        alt="The Abode interface design"
+        className="project-image"
+      />
+    </div>
+
+    <div className="project-info">
+      <div className="project-details-panel">
+        <div className="project-panel-group">
+          <span className="project-panel-heading">ROLE</span>
+          <p className="project-panel-role">
+            UI / UX Design · Frontend Development · Backend Development
+          </p>
+        </div>
+
+        <div className="project-panel-group">
+          <span className="project-panel-heading">TECHNOLOGIES</span>
+          <div className="project-tech-tags">
+            <span>React</span>
+            <span>TypeScript</span>
+            <span>Vite</span>
+            <span>Supabase</span>
           </div>
+        </div>
 
-          <div className="project-name">
-            <h1>The-Abode</h1>
+        <div className="project-panel-specs">
+          <div className="project-panel-spec">
+            <span>TYPE</span>
+            <strong>Hospitality Website</strong>
           </div>
-
-          <div className="project-details">
-            <div className="project-image-wrapper">
-              <img
-                src={TheAbode}
-                alt="The Abode interface design"
-                className="project-image"
-              />
-            </div>
-
-            <div className="project-info">
-              <div className="info-block">
-                <span className="info-label">ROLE</span>
-                <p>
-                  UI / UX Design · Frontend Development · Backend Development
-                </p>
-              </div>
-
-              <div className="info-block">
-                <span className="info-label">TECHNOLOGY</span>
-                <p>React · TypeScript · Vite · Supabase</p>
-              </div>
-
-              <div className="info-block">
-                <span className="info-label">FOCUS</span>
-                <p>
-                  Refined hospitality · intuitive booking · responsive design
-                  · strong visual identity.
-                </p>
-              </div>
-
-              <button
-                type="button"
-                className="project-link"
-                onClick={() =>
-                  window.open(
-                    'https://the-abode-teal.vercel.app/',
-                    '_blank',
-                    'noopener,noreferrer',
-                  )
-                }
-              >
-                VIEW PROJECT <span>↗</span>
-              </button>
-            </div>
+          <div className="project-panel-spec">
+            <span>SCOPE</span>
+            <strong>Full-Stack · Design</strong>
           </div>
-
-          <div className="project-summary">
-            <div className="summary-block">
-              <div className="summary-heading">
-                <span className="summary-dot">•</span>
-                PROBLEM
-              </div>
-              <p>
-                Finding and booking a stay should feel effortless, with clear
-                information, intuitive navigation and a refined experience
-                that reflects the character of The Abode.
-              </p>
-            </div>
-
-            <div className="summary-block">
-              <div className="summary-heading">
-                <span className="summary-dot">•</span>
-                SOLUTION
-              </div>
-              <p>
-                The Abode brings accommodation, discovery, and booking into a
-                refined, intuitive hospitality experience.
-              </p>
-            </div>
-
-            <div className="summary-block">
-              <div className="summary-heading">
-                <span className="summary-dot">•</span>
-                OUTCOME
-              </div>
-              <p>
-                A responsive hospitality website combining thoughtful UI/UX
-                design with a modern React and TypeScript frontend.
-              </p>
-            </div>
+          <div className="project-panel-spec">
+            <span>STATUS</span>
+            <strong className="project-status">
+              <i />
+              Deployed
+            </strong>
           </div>
+        </div>
+      </div>
 
-          {/* PROJECT 03 — FACE-TALLY */}
-          <div className="project-top">
-            <span className="project-index">03</span>
-            <div className="project-year" />
+      <a
+        href="https://the-abode-teal.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="project-link"
+      >
+        VIEW PROJECT <span>↗</span>
+      </a>
+    </div>
+  </div>
+
+  <div className="project-summary">
+    <div className="summary-block">
+      <div className="summary-heading">
+        <span className="summary-dot">•</span>
+        PROBLEM
+      </div>
+      <p>
+        Finding and booking a stay should feel effortless, with clear
+        information, intuitive navigation and a refined experience
+        that reflects the character of The Abode.
+      </p>
+    </div>
+
+    <div className="summary-block">
+      <div className="summary-heading">
+        <span className="summary-dot">•</span>
+        SOLUTION
+      </div>
+      <p>
+        The Abode brings accommodation, discovery, and booking into a
+        refined, intuitive hospitality experience.
+      </p>
+    </div>
+
+    <div className="summary-block">
+      <div className="summary-heading">
+        <span className="summary-dot">•</span>
+        OUTCOME
+      </div>
+      <p>
+        A responsive hospitality website combining thoughtful UI/UX
+        design with a modern React and TypeScript frontend.
+      </p>
+    </div>
+  </div>
+
+  {/* PROJECT 03 — FACE-TALLY */}
+  <div className="project-top">
+    <span className="project-index">03</span>
+    <div className="project-year" />
+  </div>
+
+  <div className="project-name">
+    <h1>Face-Tally</h1>
+  </div>
+
+  <div className="project-details">
+    <div className="project-image-wrapper">
+      <img
+        src={facetally}
+        alt="FaceTally interface design"
+        className="project-image"
+      />
+    </div>
+
+    <div className="project-info">
+      <div className="project-details-panel">
+        <div className="project-panel-group">
+          <span className="project-panel-heading">ROLE</span>
+          <p className="project-panel-role">
+            UI / UX Design · Frontend Development
+          </p>
+        </div>
+
+        <div className="project-panel-group">
+          <span className="project-panel-heading">TECHNOLOGIES</span>
+          <div className="project-tech-tags">
+            <span>React</span>
+            <span>TypeScript</span>
+            <span>Vite</span>
+            <span>FastAPI</span>
+            <span>OpenCV</span>
           </div>
+        </div>
 
-          <div className="project-name">
-            <h1>Face-Tally</h1>
+        <div className="project-panel-specs">
+          <div className="project-panel-spec">
+            <span>TYPE</span>
+            <strong>AI Attendance Platform</strong>
           </div>
-
-          <div className="project-details">
-            <div className="project-image-wrapper">
-              <img
-                src={facetally}
-                alt="FaceTally interface design"
-                className="project-image"
-              />
-            </div>
-
-            <div className="project-info">
-              <div className="info-block">
-                <span className="info-label">ROLE</span>
-                <p>UI / UX Design · Frontend Development</p>
-              </div>
-
-              <div className="info-block">
-                <span className="info-label">TECHNOLOGY</span>
-                <p>React · TypeScript · Vite · FastAPI · OpenCV</p>
-              </div>
-
-              <div className="info-block">
-                <span className="info-label">FOCUS</span>
-                <p>AI · Facial Recognition · Attendance Automation</p>
-              </div>
-
-              <button
-                type="button"
-                className="project-link"
-                onClick={() =>
-                  window.open(
-                    'https://face-tally2-0.vercel.app/',
-                    '_blank',
-                    'noopener,noreferrer',
-                  )
-                }
-              >
-                VIEW PROJECT <span>↗</span>
-              </button>
-            </div>
+          <div className="project-panel-spec">
+            <span>SCOPE</span>
+            <strong>Frontend · AI Integration</strong>
           </div>
-
-          <div className="project-summary">
-            <div className="summary-block">
-              <div className="summary-heading">
-                <span className="summary-dot">•</span>
-                PROBLEM
-              </div>
-              <p>
-                Traditional attendance tracking can be time-consuming and
-                prone to manual errors when students and records are managed
-                separately.
-              </p>
-            </div>
-
-            <div className="summary-block">
-              <div className="summary-heading">
-                <span className="summary-dot">•</span>
-                SOLUTION
-              </div>
-              <p>
-                FaceTally brings facial recognition, attendance tracking and
-                student records into a simple, intelligent attendance
-                experience.
-              </p>
-            </div>
-
-            <div className="summary-block">
-              <div className="summary-heading">
-                <span className="summary-dot">•</span>
-                OUTCOME
-              </div>
-              <p>
-                A responsive attendance system combining thoughtful UI/UX
-                design with facial recognition and a modern web frontend.
-              </p>
-            </div>
+          <div className="project-panel-spec">
+            <span>STATUS</span>
+            <strong className="project-status">
+              <i />
+              Deployed
+            </strong>
           </div>
-        </article>
+        </div>
+      </div>
+
+      <a
+        href="https://face-tally2-0.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="project-link"
+      >
+        VIEW PROJECT <span>↗</span>
+      </a>
+    </div>
+  </div>
+
+  <div className="project-summary">
+    <div className="summary-block">
+      <div className="summary-heading">
+        <span className="summary-dot">•</span>
+        PROBLEM
+      </div>
+      <p>
+        Traditional attendance tracking can be time-consuming and
+        prone to manual errors when students and records are managed
+        separately.
+      </p>
+    </div>
+
+    <div className="summary-block">
+      <div className="summary-heading">
+        <span className="summary-dot">•</span>
+        SOLUTION
+      </div>
+      <p>
+        FaceTally brings facial recognition, attendance tracking and
+        student records into a simple, intelligent attendance
+        experience.
+      </p>
+    </div>
+
+    <div className="summary-block">
+      <div className="summary-heading">
+        <span className="summary-dot">•</span>
+        OUTCOME
+      </div>
+      <p>
+        A responsive attendance system combining thoughtful UI/UX
+        design with facial recognition and a modern web frontend.
+      </p>
+    </div>
+  </div>
+</article>
+
       </section>
 
       {/* 04 — EXPERIENCE */}
@@ -730,59 +870,67 @@ function App() {
               projects where design and technology come together.
             </p>
 
-            <a
-              href="mailto:monikaivy2@gmail.com"
-              className="contact-button"
-            >
-              GET IN TOUCH <span>↗</span>
-            </a>
-          </div>
+           
+<a
+  href="mailto:monikaivy2@gmail.com"
+  className="contact-button"
+>
+  GET IN TOUCH
+  <ContactArrow />
+</a>
+</div>
 
-          <div className="contact-links">
-            <div className="contact-group">
-              <span className="contact-group-label">EMAIL</span>
+<div className="contact-links">
+  <div className="contact-group">
+    <span className="contact-group-label">EMAIL</span>
 
-              <a href="mailto:monikaivy2@gmail.com">
-                monikaivy2@gmail.com <span>↗</span>
-              </a>
-            </div>
+    <a href="mailto:monikaivy2@gmail.com">
+      monikaivy2@gmail.com
+      <ContactArrow />
+    </a>
+  </div>
 
-            <div className="contact-group">
-              <span className="contact-group-label">SOCIALS</span>
+  <div className="contact-group">
+    <span className="contact-group-label">SOCIALS</span>
 
-              <a
-                href="https://www.linkedin.com/in/ivy-nyambura-616b51376/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn <span>↗</span>
-              </a>
+    <a
+      href="https://www.linkedin.com/in/ivy-nyambura-616b51376/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      LinkedIn
+      <ContactArrow />
+    </a>
 
-              <a
-                href="https://github.com/Ivymnyambura"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub <span>↗</span>
-              </a>
+    <a
+      href="https://github.com/Ivymnyambura"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GitHub
+      <ContactArrow />
+    </a>
 
-              <a
-                href="https://www.figma.com/@ivymnyambura"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Figma <span>↗</span>
-              </a>
+    <a
+      href="https://www.figma.com/@ivymnyambura"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Figma
+      <ContactArrow />
+    </a>
 
-              <a
-                href="https://wa.me/254114279499?text=Hello%20Ivy%2C%20I%27d%20like%20to%20make%20an%20inquiry."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp <span>↗</span>
-              </a>
-            </div>
-          </div>
+    <a
+      href="https://wa.me/254114279499?text=Hello%20Ivy%2C%20I%27d%20like%20to%20make%20an%20inquiry."
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      WhatsApp
+      <ContactArrow />
+    </a>
+  </div>
+</div>
+
         </div>
       </section>
 
@@ -796,8 +944,8 @@ function App() {
           <span>© 2026 — ALL RIGHTS RESERVED</span>
 
           <span>
-            NAIROBI, KE
             <i className="footer-status-dot" />
+            NAIROBI, KE
             AVAILABLE FOR WORK
           </span>
 
